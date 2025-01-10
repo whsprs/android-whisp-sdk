@@ -2,7 +2,7 @@
 
 # Android SDK
 
-Official Android SDK for the [whisp](https://wsprs.ai) protocol.
+Official Android SDK for the [whisp](https://whsprs.ai) protocol.
 
 ---
 
