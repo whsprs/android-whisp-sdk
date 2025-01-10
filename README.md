@@ -10,6 +10,7 @@ Official Android SDK for the [whisp](https://whsprs.ai) protocol.
 1. [About](#about)
 2. [What is Android SDK?](#what-is-android-sdk)
 3. [Installation](#installation)
+4. [Links](#links)
 
 ---
 
@@ -55,3 +56,8 @@ whispers.client.sendMessage(
     WhispSendTextMessage(data = WhispSendTextMessage.Data(text))
 )
 ```
+
+# Links
+
+- [whsprs.ai](https://whsprs.ai/)
+- [x.com](https://x.com/whispersai)
