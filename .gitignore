@@ -1,0 +1,11 @@
+*.iml
+.DS_Store
+.externalNativeBuild
+.gradle
+.idea
+.kotlin
+/captures
+/local.properties
+allure-report
+allure-results
+build/

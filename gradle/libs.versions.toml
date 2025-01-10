@@ -1,0 +1,124 @@
+# Sort all dependencies in alphabetical order
+
+[versions]
+
+kotlin = "2.0.21" # Do not forget to update ksp version!
+ksp = "2.0.21-1.0.26"
+agp = "8.5.2"
+buildTools = "34.0.0"
+compileSdk = "34"
+targetSdk = "34"
+minSdk = "28"
+
+appcompat = "1.7.0"
+coil = "2.6.0"
+composeBom = "2024.10.00"
+coreKtx = "1.13.1"
+coroutines = "1.9.0"
+dagger = "2.47"
+datastore = "1.1.1"
+lifecycle = "2.8.6"
+lottie = "6.5.2"
+markwon = "4.6.2"
+material = "1.12.0"
+navigation = "2.8.3"
+protobuf = "3.23.4"
+retrofit = "2.11.0"
+room = "2.6.1"
+
+[plugins]
+
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+[libraries]
+
+# Plugins
+pluginAndroidGradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+pluginGoogleServices = "com.google.gms:google-services:4.4.2"
+pluginKotlinGradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+pluginNavigationArgs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation" }
+pluginProtobuf = "com.google.protobuf:protobuf-gradle-plugin:0.9.4"
+
+# Kotlin
+kotlinCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3"
+
+# AndroidX
+androidxActivityCompose = "androidx.activity:activity-compose:1.9.3"
+androidxActivityKtx = "androidx.activity:activity-ktx:1.9.3"
+androidxAppcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidxComposeAnimation = { module = "androidx.compose.animation:animation" }
+androidxComposeBom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidxComposeFoundation = { module = "androidx.compose.foundation:foundation" }
+androidxComposeMaterial = { module = "androidx.compose.material:material" }
+androidxComposeMaterial3 = { module = "androidx.compose.material3:material3" }
+androidxComposeRuntime = { module = "androidx.compose.runtime:runtime" }
+androidxComposeUi = { module = "androidx.compose.ui:ui" }
+androidxComposeUiTooling = { module = "androidx.compose.ui:ui-tooling" }
+androidxComposeUiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidxConcurrent = "androidx.concurrent:concurrent-futures-ktx:1.2.0"
+androidxCoreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidxFragmentKtx = "androidx.fragment:fragment-ktx:1.8.4"
+androidxLifecycleCommon = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
+androidxLifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.2.0"
+androidxLifecycleLiveData = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidxLifecycleRuntime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidxLifecycleViewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidxNavigationFragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidxNavigationRuntime = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "navigation" }
+androidxNavigationUi = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidxRoomCompiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidxRoomKtx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidxRoomRuntime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidxRoomRxJava2 = { module = "androidx.room:room-rxjava2", version.ref = "room" }
+androidxSecurityCrypto = "androidx.security:security-crypto:1.1.0-alpha06"
+
+# Google
+googlePlayAuth = "com.google.android.gms:play-services-auth:21.2.0"
+googlePlayFitness = "com.google.android.gms:play-services-fitness:21.2.0"
+googlePlayLocation = "com.google.android.gms:play-services-location:21.3.0"
+googlePlayReview = "com.google.android.play:review:2.0.2"
+googlePlayUpdate = "com.google.android.play:app-update:2.1.0"
+googlePlayUpdateKtx = "com.google.android.play:app-update-ktx:2.1.0"
+googleProtobufJavalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
+googleProtobufProtoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+
+# Other
+commonsConfiguration = "commons-configuration:commons-configuration:1.10"
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coilCore = { module = "io.coil-kt:coil", version.ref = "coil" }
+composeShimmer = "com.valentinilk.shimmer:compose-shimmer:1.0.5"
+daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+daggerCore = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+desugaring = "com.android.tools:desugar_jdk_libs:2.1.2"
+facebookShimmer = "com.facebook.shimmer:shimmer:0.5.0"
+flexbox = "com.google.android.flexbox:flexbox:3.0.0"
+gson = "com.google.code.gson:gson:2.10.1"
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+lottieCompose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie" }
+markdown = "com.mikepenz:multiplatform-markdown-renderer-android:0.26.0"
+markwonCore = { module = "io.noties.markwon:core", version.ref = "markwon" }
+markwonImage = { module = "io.noties.markwon:image", version.ref = "markwon" }
+markwonLinkify = { module = "io.noties.markwon:linkify", version.ref = "markwon" }
+markwonStrikeThrough = { module = "io.noties.markwon:ext-strikethrough", version.ref = "markwon" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+material3 = "androidx.compose.material3:material3:1.9.0"
+okhttp = "com.squareup.okhttp3:okhttp:4.12.0"
+okhttpInterceptor = "com.squareup.okhttp3:logging-interceptor:4.11.0"
+retrofitCore = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofitGson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+retrofitJson = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
+retrofitRxJava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit" }
+rxJava2Core = "io.reactivex.rxjava2:rxjava:2.2.21"
+rxJava2RxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
+rxJava2RxKotlin = "io.reactivex.rxjava2:rxkotlin:2.4.0"
+timber = "com.jakewharton.timber:timber:4.7.1"
+
+[bundles]
+
+androidxLifecycle = ["androidxLifecycleViewmodel", "androidxLifecycleLiveData", "androidxLifecycleCommon", "androidxLifecycleExtensions", "androidxLifecycleRuntime"]
+androidxNavigation = ["androidxNavigationRuntime", "androidxNavigationFragment", "androidxNavigationUi"]
+androidxRoom = ["androidxRoomKtx", "androidxRoomRxJava2", "androidxRoomRuntime"]
+markwon = ["markwonCore", "markwonStrikeThrough", "markwonImage", "markwonLinkify"]
+retrofit = ["retrofitCore", "retrofitRxJava2", "retrofitGson", "retrofitJson"]
