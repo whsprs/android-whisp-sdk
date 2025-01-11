@@ -1,11 +1,12 @@
 package ai.whsprs.sdk.ui.chat.presentation
 
 import ai.whsprs.sdk.ui.components.messageinput.ChatInputState
+import ai.whsprs.sdk.ui.components.messageinput.text_input.TextInputState
 import ai.whsprs.sdk.ui.components.messagelist.ChatLazyItem
 import ai.whsprs.sdk.ui.components.messagelist.MessageListState
 import ai.whsprs.sdk.ui.components.topappbar.ChatTopAppBarState
 
-data class WhisperChatUiState(
+data class WhispChatUiState(
     val messageListState: MessageListState,
     val inputState: ChatInputState,
     val topAppBarState: ChatTopAppBarState,
@@ -24,4 +25,23 @@ data class WhisperChatUiState(
                 .orEmpty()
             else -> messageListState.key
         }
+
+    companion object {
+
+        val DefaultPreview = WhispChatUiState(
+            messageListState = MessageListState.Default,
+            inputState = ChatInputState.MessageInputState(
+                textInputState = TextInputState.Default,
+            ),
+            topAppBarState = ChatTopAppBarState.Default,
+        )
+
+        val ContentPreview = WhispChatUiState(
+            messageListState = MessageListState.Messages,
+            inputState = ChatInputState.MessageInputState(
+                textInputState = TextInputState.Default,
+            ),
+            topAppBarState = ChatTopAppBarState.Default,
+        )
+    }
 }

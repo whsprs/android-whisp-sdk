@@ -1,8 +1,9 @@
 package ai.whsprs.sdk.ui.chat
 
+import ai.whsprs.common.ui.WhisperPreview
 import ai.whsprs.sdk.ui.animations.AnimatedContainerState
 import ai.whsprs.sdk.ui.animations.rememberLazyListAnimationState
-import ai.whsprs.sdk.ui.chat.presentation.WhisperChatUiState
+import ai.whsprs.sdk.ui.chat.presentation.WhispChatUiState
 import ai.whsprs.sdk.ui.components.messageinput.ChatInputState
 import ai.whsprs.sdk.ui.components.messageinput.MessageInput
 import ai.whsprs.sdk.ui.components.messagelist.ChatLazyItem
@@ -44,8 +45,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun WhisperChatScreen(
-    state: WhisperChatUiState,
+fun WhispChatScreen(
+    state: WhispChatUiState,
     messagesLazyListState: LazyListState = rememberLazyListState(),
     animatedContainerState: AnimatedContainerState = rememberLazyListAnimationState(),
     onMessagesEndReached: (ChatLazyItem) -> Unit = {},
@@ -163,4 +164,20 @@ private fun ScrollToBottomButton(
     ) {
         ScrollToBottom(onClick = onClick)
     }
+}
+
+@Composable
+@WhisperPreview
+private fun WhispChatScreenLoadingPreview() {
+    WhispChatScreen(
+        state = WhispChatUiState.DefaultPreview
+    )
+}
+
+@Composable
+@WhisperPreview
+private fun WhispChatScreenContentPreview() {
+    WhispChatScreen(
+        state = WhispChatUiState.ContentPreview
+    )
 }

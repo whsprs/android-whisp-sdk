@@ -6,18 +6,7 @@ sealed interface ChatInputState {
 
     data class MessageInputState(
         val textInputState: TextInputState,
-    ) : ChatInputState {
-
-        sealed interface InputButtonState {
-
-            val id: String
-
-            data object Text : InputButtonState {
-                override val id: String
-                    get() = "Text"
-            }
-        }
-    }
+    ) : ChatInputState
 
     data object HiddenState : ChatInputState
 }

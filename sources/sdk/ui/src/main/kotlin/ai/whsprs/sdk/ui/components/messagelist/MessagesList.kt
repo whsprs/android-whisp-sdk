@@ -44,6 +44,7 @@ import ai.whsprs.sdk.ui.components.messagelist.MessageListState.FullScreenError
 import ai.whsprs.sdk.ui.components.messagelist.MessageListState.FullScreenLoading
 import ai.whsprs.sdk.ui.components.LoadingIndicator
 import ai.whsprs.sdk.ui.theme.ChatTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 
 @Composable
 internal fun MessagesList(
@@ -182,82 +183,24 @@ private fun DefaultMessageListLoadingIndicator(
             modifier = Modifier
                 .padding(top = 16.dp, bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
                 .fillMaxWidth()
-                .height(60.dp)
-                .clip(ChatTheme.shapes.whisperMessageBubble)
+                .height(16.dp)
+                .clip(RoundedCornerShape(24.dp))
                 .background(WhisperTheme.Colors.Fill.Tertiary)
         )
         Box(
             modifier = Modifier
-                .padding(bottom = 16.dp, end = ChatTheme.dimens.messageEndMargin)
+                .padding(top = 16.dp, bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
                 .fillMaxWidth()
-                .height(80.dp)
-                .clip(ChatTheme.shapes.defaultMessageBubble)
+                .height(16.dp)
+                .clip(RoundedCornerShape(24.dp))
                 .background(WhisperTheme.Colors.Fill.Tertiary)
         )
         Box(
             modifier = Modifier
-                .padding(bottom = 16.dp, start = ChatTheme.dimens.messageEndMargin)
+                .padding(top = 16.dp, bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
                 .fillMaxWidth()
-                .height(60.dp)
-                .align(Alignment.End)
-                .clip(ChatTheme.shapes.myMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
-                .fillMaxWidth()
-                .height(90.dp)
-                .clip(ChatTheme.shapes.whisperMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
-                .fillMaxWidth()
-                .height(72.dp)
-                .clip(ChatTheme.shapes.defaultMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 16.dp, end = ChatTheme.dimens.messageEndMargin)
-                .fillMaxWidth()
-                .height(60.dp)
-                .clip(ChatTheme.shapes.defaultMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 16.dp)
-                .width(110.dp)
-                .height(60.dp)
-                .align(Alignment.End)
-                .clip(ChatTheme.shapes.myMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
-                .fillMaxWidth()
-                .height(162.dp)
-                .clip(ChatTheme.shapes.whisperMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 8.dp, end = ChatTheme.dimens.messageEndMargin)
-                .fillMaxWidth()
-                .height(72.dp)
-                .clip(ChatTheme.shapes.defaultMessageBubble)
-                .background(WhisperTheme.Colors.Fill.Tertiary)
-        )
-        Box(
-            modifier = Modifier
-                .padding(bottom = 16.dp, end = ChatTheme.dimens.messageEndMargin)
-                .fillMaxWidth()
-                .height(60.dp)
-                .clip(ChatTheme.shapes.defaultMessageBubble)
+                .height(16.dp)
+                .clip(RoundedCornerShape(24.dp))
                 .background(WhisperTheme.Colors.Fill.Tertiary)
         )
     }
