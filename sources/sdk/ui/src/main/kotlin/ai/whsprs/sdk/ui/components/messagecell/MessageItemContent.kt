@@ -27,14 +27,14 @@ internal fun MessageItemContent(
     footerContent: @Composable () -> Unit = {},
     bubbleContent: @Composable (Shape) -> Unit = {},
 ) {
-    val shape = when (message.position) {
-        Position.Top -> when (message.align) {
-            Align.Start -> ChatTheme.shapes.whisperMessageBubble
-            Align.Center -> ChatTheme.shapes.defaultMessageBubble
-            Align.End -> ChatTheme.shapes.myMessageBubble
+    val shape = when (message.align) {
+        Align.Start, Align.Center -> ChatTheme.shapes.whisperMessageBubble
+        else -> {
+            when (message.position) {
+                Position.Top -> ChatTheme.shapes.myMessageBubble
+                else -> ChatTheme.shapes.defaultMessageBubble
+            }
         }
-
-        else -> ChatTheme.shapes.defaultMessageBubble
     }
 
     Column(
@@ -79,11 +79,7 @@ private fun Modifier.bubbleBackground(
 ): Modifier {
     return this.then(
         when (message.align) {
-            Align.Center -> this
-            Align.Start -> background(
-                color = ChatTheme.colors.whisperMessageBackgroundColor,
-                shape = shape
-            )
+            Align.Center, Align.Start -> this
 
             Align.End -> background(
                 brush = Brush.linearGradient(ChatTheme.colors.myMessageBackgroundColors),

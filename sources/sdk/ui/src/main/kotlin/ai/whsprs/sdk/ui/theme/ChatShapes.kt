@@ -2,6 +2,7 @@ package ai.whsprs.sdk.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Immutable
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 
@@ -31,12 +32,7 @@ data class ChatShapes(
                 bottomEnd = 4.dp,
                 bottomStart = 24.dp
             ),
-            whisperMessageBubble = RoundedCornerShape(
-                topStart = 4.dp,
-                topEnd = 24.dp,
-                bottomEnd = 24.dp,
-                bottomStart = 24.dp
-            ),
+            whisperMessageBubble = RectangleShape,
             defaultMessageBubble = RoundedCornerShape(
                 topStart = 24.dp,
                 topEnd = 24.dp,
