@@ -1,5 +1,6 @@
 package ai.whsprs.sdk.ui.components.messageinput
 
+import ai.whsprs.common.ui.WhisperPreview
 import ai.whsprs.common.ui.style.WhisperTheme
 import ai.whsprs.sdk.ui.components.messageinput.ChatInputState.MessageInputState
 import androidx.compose.animation.core.animateFloatAsState
@@ -17,6 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.unit.dp
 import ai.whsprs.sdk.ui.components.messageinput.text_input.TextInput
+import ai.whsprs.sdk.ui.components.messageinput.text_input.TextInputState
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 
 @Composable
 internal fun MessageInput(
@@ -25,41 +32,36 @@ internal fun MessageInput(
     onInputChange: (String) -> Unit = {},
     onCtaClick: () -> Unit = {},
 ) {
-    val outerPaddingDp = 16.dp
-    val buttonStartPaddingDp = 6.dp
-    val buttonSizeDp = 48.dp
 
-    val alpha by animateFloatAsState(
-        targetValue = if (state.textInputState.isEnabled) 1f else .5f,
-        label = "MessageInputAlphaAnimation"
-    )
-
-    Surface(
-        modifier = modifier
-            .fillMaxWidth(),
-        color = WhisperTheme.Colors.Background.Primary,
-        shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color = WhisperTheme.Colors.Background.Primary)
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Row(
+        TextInput(
+            state = state.textInputState,
             modifier = Modifier
-                .padding(outerPaddingDp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            BoxWithConstraints {
-                TextInput(
-                    state = state.textInputState,
-                    modifier = Modifier
-                        .width(maxWidth - buttonSizeDp - buttonStartPaddingDp)
-                        .alpha(alpha),
-                    onInputChange = onInputChange,
-                    onSendClick = onCtaClick,
-                )
-            }
+                .weight(1f),
+            onInputChange = onInputChange,
+            onSendClick = onCtaClick,
+        )
 
-            TextSendButton(
-                onClick = onCtaClick,
-                isEnabled = state.textInputState.isEnabled,
-            )
-        }
+        TextSendButton(
+            onClick = onCtaClick,
+            isEnabled = state.textInputState.isEnabled,
+        )
     }
+}
+
+@Composable
+@WhisperPreview
+private fun MessageInputPreview() {
+    MessageInput(
+        state = MessageInputState(
+            textInputState = TextInputState.Default
+        )
+    )
 }

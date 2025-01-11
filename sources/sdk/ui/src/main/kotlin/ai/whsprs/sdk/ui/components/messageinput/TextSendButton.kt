@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -25,10 +26,10 @@ internal fun TextSendButton(
 ) {
     Box(
         modifier = modifier
-            .size(48.dp)
-            .clip(RoundedCornerShape(16.dp))
+            .size(32.dp)
+            .clip(CircleShape)
             .background(
-                color = WhisperTheme.Colors.Feature.Whisper,
+                color = WhisperTheme.Colors.Text.Primary,
             )
             .clickable(
                 onClick = onClick,
@@ -37,10 +38,10 @@ internal fun TextSendButton(
         contentAlignment = Alignment.Center,
     ) {
         Icon(
-            modifier = Modifier.size(24.dp),
-            imageVector = ImageVector.vectorResource(id = R.drawable.ds_paper_plane),
+            modifier = Modifier.size(16.dp),
+            imageVector = ImageVector.vectorResource(id = R.drawable.ds_arrow_up),
             contentDescription = "Send button",
-            tint = WhisperTheme.Colors.Text.PrimaryWhite,
+            tint = WhisperTheme.Colors.Text.PrimaryInverse,
         )
     }
 }

@@ -4,10 +4,7 @@ import ai.whsprs.sdk.ui.components.messageinput.text_input.TextInputState
 
 sealed interface ChatInputState {
 
-    val id: String
-
     data class MessageInputState(
-        override val id: String = "MessageInputState",
         val textInputState: TextInputState,
     ) : ChatInputState {
 
@@ -22,7 +19,5 @@ sealed interface ChatInputState {
         }
     }
 
-    data class HiddenState(
-        override val id: String = "HiddenState",
-    ) : ChatInputState
+    data object HiddenState : ChatInputState
 }

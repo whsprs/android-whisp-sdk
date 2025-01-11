@@ -10,7 +10,7 @@ data class TextInputState(
 
         val Default = TextInputState(
             input = "",
-            hint = "Start typing...",
+            hint = "Write your message...",
             isEnabled = true,
         )
 

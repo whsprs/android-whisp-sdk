@@ -33,7 +33,7 @@ internal fun TextInput(
 ) {
     BasicTextField(
         modifier = modifier
-            .defaultMinSize(minHeight = 48.dp)
+            .defaultMinSize(minHeight = 32.dp)
             .verticalScroll(rememberScrollState()),
         value = state.input,
         onValueChange = onInputChange,
@@ -57,7 +57,7 @@ internal fun TextInput(
                     .fillMaxSize()
                     .background(
                         color = WhisperTheme.Colors.Fill.Tertiary,
-                        shape = RoundedCornerShape(16.dp)
+                        shape = RoundedCornerShape(24.dp)
                     )
                     .padding(
                         horizontal = 16.dp,

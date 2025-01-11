@@ -109,7 +109,6 @@ fun WhisperChatScreen(
                 ) {
                     AnimatedContent(
                         targetState = state.inputState,
-                        contentKey = ChatInputState::id,
                         transitionSpec = {
                             val durationMs = 300
                             (fadeIn(tween(durationMs, durationMs / 2)) +
