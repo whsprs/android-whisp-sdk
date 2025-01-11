@@ -26,7 +26,7 @@ fun WhisperIcon(
         contentAlignment = Alignment.Center,
         modifier = modifier
             .background(
-                color = WhisperTheme.Colors.Feature.Whisper,
+                color = WhisperTheme.Colors.Text.PrimaryBlack,
                 shape = CircleShape,
             )
             .size(iconSize),

@@ -1,5 +1,6 @@
 package ai.whsprs.sdk.ui.components.topappbar
 
+import ai.whsprs.common.ui.WhisperPreview
 import ai.whsprs.common.ui.components.appbar.TopAppBar
 import ai.whsprs.common.ui.rememberWhisperShimmer
 import ai.whsprs.common.ui.style.Body14Regular
@@ -7,6 +8,7 @@ import ai.whsprs.common.ui.style.Heading4
 import ai.whsprs.common.ui.style.WhisperTheme
 import ai.whsprs.sdk.ui.R
 import ai.whsprs.sdk.ui.components.whispericon.WhisperIcon
+import ai.whsprs.sdk.ui.theme.ChatTheme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -39,6 +42,7 @@ fun ChatTopAppBar(
 ) {
     TopAppBar(
         modifier = modifier.fillMaxWidth(),
+        shape = RectangleShape,
         leadingContent = {
             IconButton(
                 onClick = onBackPressed,
@@ -109,4 +113,17 @@ fun ChatTopAppBar(
             }
         },
     )
+}
+
+@Composable
+@WhisperPreview
+private fun ChatTopAppBarPreview() {
+    ChatTheme {
+        ChatTopAppBar(
+            state = ChatTopAppBarState(
+                title = "whisp",
+                subtitle = "online"
+            )
+        )
+    }
 }
